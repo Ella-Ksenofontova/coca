@@ -1,0 +1,9 @@
+.cta-form__prompt
+  position: absolute
+  top: calc(2rem + 65px)
+  transition: all .5s
+  
+.cta-form__prompt:has(+ .cta-form__input:focus), 
+.cta-form__prompt:has(+ .cta-form__input:not(:placeholder-shown))
+  top: 85px
+  font-size: 0.8rem

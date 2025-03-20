@@ -1,0 +1,17 @@
+@use "./__button/button"
+@use "./__input/input"
+@use "./__prompt/prompt"
+  
+.cta-form
+  align-items: start
+  position: relative
+  display: flex
+  flex-direction: column
+  padding-top: 95px
+  width: 100%
+  gap: 25px
+
+@media screen and (min-width: 400px)
+  .cta-form
+    flex-direction: row
+    align-items: center

@@ -1,0 +1,13 @@
+.circle_position-top-left 
+  $blur: 0
+  &.circle_size-small
+    $blur: 80px
+  &.circle_size-large
+    $blur: 120px
+  top: calc(2.2vw + $blur)
+  left: calc(-13vw + $blur / 2)
+
+  @media screen and (min-width: 768px)
+    .circle_position-top-left
+      top: calc(-20vw + 120px)
+      left: calc(-20vw + 60px)
