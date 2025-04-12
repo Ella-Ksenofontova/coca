@@ -1,0 +1,10 @@
+@use "./can-animate_hidden-at-first"
+@use "./can-animate_origin-bottom"
+@use "./can-animate_origin-top"
+@use "./can-animate_origin-left"
+@use "./can-animate_origin-right"
+@use "./can-animate_shown"
+  
+@media screen and (min-width: 768px)
+  .can-animate
+    transition: transform .5s, visibility .5s .25s

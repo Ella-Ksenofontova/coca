@@ -1,0 +1,18 @@
+@use "./_image/card__picture_image-work-1"
+@use "./_image/card__picture_image-work-2"
+@use "./_image/card__picture_image-work-3"
+@use "./_image/card__picture_image-work-4"
+
+.card__picture
+  position: relative
+  width: 100%
+  height: calc(216 / 160 * calc(100vw - 40px))
+  background-size: cover
+  flex-grow: 10
+
+@media screen and ( min-width: 300px )
+  .card__picture
+    flex-basis: 43vw
+    width: 43vw
+    max-width: 240px
+    height: calc(216 / 160 * min(240px, 43vw))

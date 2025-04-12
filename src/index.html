@@ -13,10 +13,494 @@
     <div class="circle circle_color-green circle_size-small circle_position-top-right"></div>
   </div>
   <div class="content">
-    <header class="header">
+    <header class="header can-animate can-animate_origin-bottom">
       <img src="./assets/Logo.png" alt="Logo of Coca" class="logo">
-      <nav class="header__menu menu">
+      <nav class="header__menu menu can-animate can-animate_origin-left can-animate_hidden-at-first" data-delay="250">
         <ul class="menu-list">
+          <li class="menu-list__item menu-item">
+            <a href="" class="menu-list__link link">Home</a>
+          </li>
+          <li class="menu-list__item menu-item">
+            <a href="" class="menu-list__link link">About</a>
+          </li>
+          <li class="menu-list__item menu-item">
+            <a href="" class="menu-list__link link">Blog</a>
+          </li>
+          <li class="menu-list__item menu-item">
+            <a href="" class="menu-list__link link">Pricing</a>
+          </li>
+          <li class="menu-list__item menu-item">
+            <a href="" class="menu-list__link link link_contacts">Contact Us -></a>
+          </li>
+        </ul>
+      </nav>
+      <button class="menu-button button" aria-label="Open menu" id="open-menu"></button>
+    </header>
+
+    <section class="section-intro section section_theme-light" id="intro">
+      <h1
+        class="heading heading_level-4 heading_desktop-level-1 section-intro__heading can-animate can-animate_origin-right">
+        Digitally forward creative</h1>
+      <div
+        class="section-intro__important-message important-message can-animate can-animate_origin-right can-animate_hidden-at-first"
+        data-delay="250">
+        <hr class="highlight">
+        <p class="section-intro__paragraph text-content_weight-bold text-content_size-large">Our biggest challenge is
+          making sure we're always designing and building
+          products that will help you run your business better.</p>
+      </div>
+      <form class="cta-form can-animate can-animate_origin-right can-animate_hidden-at-first" data-delay="500">
+        <label for="email" class="cta-form__prompt text-content_size-medium text-content_weight-medium">Enter your
+          email</label>
+        <input type="email" class="cta-form__input input input_type-text" autocomplete="email" name="email" id="email"
+          placeholder=" " required>
+        <button class="cta-button button text-content_weight-bold" type="submit">Try for free</button>
+      </form>
+
+      <div
+        class="section-intro__wrapper wrapper_dir-vertical wrapper_flex can-animate can-animate_origin-right can-animate_hidden-at-first"
+        data-delay="500">
+        <div class="section-intro__sales section-intro__picture"></div>
+        <div class="section-intro__customer-growth"></div>
+        <div class="section-intro__statistics section-intro__picture"></div>
+      </div>
+    </section>
+
+    <section class="section section-advantages section_theme-dark" id="advantages">
+      <h2
+        class="section-advantages__heading heading heading_level-5 heading_desktop-level-2 can-animate can-animate_origin-left can-animate_hidden-at-first">
+        Sans helps our client solve complex customer problems with
+        date that does
+        more.</h2>
+      <p
+        class="section-advantages__paragraph section-advantages__description paragraph text-content_size-medium text-content_weight-regular">
+        Our
+        platform offers the modern enterprise full control of how date can be
+        access and used with industry leading software solutions for identity, activation, and date collaboration</p>
+      <ul class="advantages-list list">
+        <li class="can-animate can-animate_origin-left">
+          <div class="advantages-list__icon icon icon_image-calendar"></div>
+          <h3 class="heading heading_level-6 heading_desktop-level-4">Build your date fundamental</h3>
+          <p class="section-advantages__paragraph paragraph text-content_size-medium text-content_weight-regular">
+            Build access to date, develop valuable business insights and drive revenue while maintaining full control
+            over access and use of date at all times.
+          </p>
+        </li>
+        <li class="can-animate can-animate_origin-right">
+          <div class="advantages-list__icon icon icon_image-checklist"></div>
+          <h3 class="heading heading_level-6 heading_desktop-level-4">Measure more effective</h3>
+          <p class="section-advantages__paragraph paragraph text-content_size-medium text-content_weight-regular">
+            Effectively measure people-based campaigns with the freedom to choose from best-of breed partners to
+            optimize and drive media innovation.
+          </p>
+        </li>
+        <li class="can-animate can-animate_origin-left">
+          <div class="advantages-list__icon icon icon_image-marked-list"></div>
+          <h3 class="heading heading_level-6 heading_desktop-level-4">Activate your date</h3>
+          <p class="section-advantages__paragraph paragraph text-content_size-medium text-content_weight-regular">
+            Accurately address your specific audiences at scale across any channel, platform, publisher or network and
+            safely translate date between identity space to improve results.
+          </p>
+        </li>
+        <li class="can-animate can-animate_origin-right">
+          <div class="advantages-list__icon icon icon_image-shield"></div>
+          <h3 class="heading heading_level-6 heading_desktop-level-4">Strengthen consumer privacy</h3>
+          <p class="paragraph section-advantages__paragraph text-content_size-medium text-content_weight-regular">
+            Protect your customer date with leading privacy-preserving technologies and advanced techniques to minimize
+            date movement while still enabling insight generation.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="section-features wrapper_desktop-grid section section_theme-light" id="features">
+      <div class="section-features__desktop can-animate can-animate_origin-left">
+        <div class="section-features__statistics"></div>
+      </div>
+      <div class="wrapper wrapper_desktop-dir-vertical wrapper_flex">
+        <h2 class="heading heading_level-5 heading_desktop-level-2">
+          Passion to increase company revenue up to 85%
+        </h2>
+        <p class="paragraph paragraph_color-gray text-content_size-medium text-content_weight-medium">
+          Automate your sales, marketing and service in one platform. Avoid date leaks and enable consistent messaging
+        </p>
+        <ul class="features-list">
+          <li class="features-list__item list-item">
+            <div class="icon icon_image-check"></div>
+            <p class="paragraph text-content_size-medium text-content_weight-medium">Close more deals with single - page
+              contact managment</p>
+          </li>
+          <li class="features-list__item list-item">
+            <div class="icon icon_image-check"></div>
+            <p class="paragraph text-content_size-medium text-content_weight-medium">Enjoy one-click calling, call
+              scripts and voicemail automation</p>
+          </li>
+          <li class="features-list__item list-item">
+            <div class="icon icon_image-check"></div>
+            <p class="paragraph text-content_size-medium text-content_weight-medium">Take stages and milestones of your
+              deals to keep the sales process an
+              track</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-statistics section_theme-light" id="statistics">
+      <div class="section-statistics__wrapper wrapper wrapper_grid">
+        <div class="section-statistics__item can-animate can-animate_origin-left can-animate_hidden-at-first">
+          <h2 class="heading heading_level-4 heading_desktop-level-2">17k</h2>
+          <p class="paragraph paragraph_color-gray text-content_size-large text-content_weight-regular">happy customers
+            on worldwide</p>
+        </div>
+        <div class="section-statistics__item can-animate can-animate_origin-left can-animate_hidden-at-first"
+          data-delay="250">
+          <h2 class="heading heading_level-4 heading_desktop-level-2">15+</h2>
+          <p class="paragraph paragraph_color-gray text-content_size-large text-content_weight-regular">years of work
+            experience</p>
+        </div>
+        <div class="section-statistics__item can-animate can-animate_origin-left can-animate_hidden-at-first"
+          data-delay="500">
+          <h2 class="heading heading_level-4 heading_desktop-level-2">50+ </h2>
+          <p class="paragraph paragraph_color-gray text-content_size-large text-content_weight-regular">creative &
+            passionate members</p>
+        </div>
+        <div class="section-statistics__item can-animate can-animate_origin-left can-animate_hidden-at-first"
+          data-delay="750">
+          <h2 class="heading heading_level-4 heading_desktop-level-2">100+</h2>
+          <p class="paragraph paragraph_color-gray text-content_size-large text-content_weight-regular">integrations</p>
+        </div>
+      </div>
+
+      <div class="picture picture_image-team"></div>
+
+      <div class="wrapper section-statistics__wrapper-text wrapper_desktop-grid wrapper_flex">
+        <h2 class="heading heading_level-5 heading_desktop-level-2 text-content_weight-semi-bold">Lift your business to
+          new heights with our
+          digital
+          marketing services</h2>
+        <p class="paragraph text-content_size-medium text-content_weight-medium paragraph_color-gray">To build software
+          that gives customer facing teams in small and
+          medium-sized businesses the ability to create rewarding and long-lasting relationships with customers</p>
+      </div>
+    </section>
+    <section class="section-companies section section_theme-light" id="companies">
+      <div class="wrapper wrapper_desktop-dir-horizontal wrapper_flex section-companies__wrapper">
+        <div class="wrapper wrapper_desktop-dir-vertical wrapper_flex">
+          <h2 class="heading heading_level-5 heading_desktop-level-2 can-animate can-animate_origin-left">890+</h2>
+          <p class="paragraph text-content_size-medium text-content_weight-medium paragraph_color-gray can-animate can-animate_origin-right can-animate_hidden-at-first"
+            data-delay="2000">some big
+            companies that we work with, and trust us very much</p>
+        </div>
+        <div class="wrapper_desktop-dir-horizontal wrapper_grid section-companies__logos-wrapper">
+          <img class="section-companies__logo can-animate can-animate_origin-left can-animate_hidden-at-first"
+            src="./assets/Airbnb Logo.png" alt="Airbnb">
+          <img class="section-companies__logo can-animate can-animate_origin-left can-animate_hidden-at-first"
+            src="assets/Amazon Logo.png" alt="Amazon" data-delay="250">
+          <img class="section-companies__logo can-animate can-animate_origin-left can-animate_hidden-at-first"
+            src="assets/FedEx Logo.png" alt="FedEx" data-delay="500">
+          <img class="section-companies__logo can-animate can-animate_origin-left can-animate_hidden-at-first"
+            src="assets/Microsoft Logo.png" alt="Microsoft" data-delay="750">
+          <img class="section-companies__logo can-animate can-animate_origin-right can-animate_hidden-at-first"
+            src="assets/OYO Logo.png" alt="OYO" data-delay="1000">
+          <img class="section-companies__logo can-animate can-animate_origin-right can-animate_hidden-at-first"
+            src="assets/Walmart Logo.png" alt="Walmart" data-delay="1250">
+          <img class="section-companies__logo can-animate can-animate_origin-right can-animate_hidden-at-first"
+            src="assets/Google Logo.png" alt="Google" data-delay="1500">
+          <img class="section-companies__logo can-animate can-animate_origin-right can-animate_hidden-at-first"
+            src="assets/Group.png" alt="OLA" data-delay="1750">
+        </div>
+      </div>
+    </section>
+    <section class="section-our-work section section_theme-light" id="our-work">
+      <h2
+        class="heading heading_level-5 heading_desktop-level-2 section-our-work__heading can-animate can-animate_origin-left">
+        Here’s how Sans can benefit your business</h2>
+      <p
+        class="paragraph paragraph_color-gray text-content_size-medium text-content_weight-medium section-our-work__paragraph">
+        Build more
+        meaningful and lasting relationships - better understand their needs, identify new opportunities to help address
+        any problems faster</p>
+      <div class="wrapper_desktop-dir-horizontal wrapper_flex can-animate can-animate_origin-left">
+        <div class="section-our-work__card card">
+          <div class="card__picture card__picture_image-work-1">
+            <div class="card__icon icon icon_rounded icon_image-smile"></div>
+          </div>
+          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+            <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Lead happiness for
+              customers</h4>
+            <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
+              meaningful and lasting relationships - better understand their needs, identify
+              new opportunities to help address any problems faster</p>
+          </div>
+        </div>
+        <div class="section-our-work__card card">
+          <div class="card__picture card__picture_image-work-2">
+            <div class="card__icon icon icon_rounded icon_image-arrow"></div>
+          </div>
+          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+            <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Mutually support each
+              other</h4>
+            <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
+              meaningful and lasting relationships - better understand their needs,
+              identify new opportunities to help address any problems faster</p>
+          </div>
+        </div>
+        <div class="section-our-work__card card">
+          <div class="card__picture card__picture_image-work-3">
+            <div class="card__icon icon icon_rounded icon_image-people"></div>
+          </div>
+          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+            <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Have fun growing together
+            </h4>
+            <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
+              meaningful and lasting relationships - better understand their needs,
+              identify new opportunities to help address any problems faster</p>
+          </div>
+        </div>
+        <div class="section-our-work__card card">
+          <div class="card__picture card__picture_image-work-4">
+            <div class="card__icon icon icon_rounded icon_image-desk"></div>
+          </div>
+          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+            <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Make Your Business Grow
+            </h4>
+            <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
+              meaningful and lasting relationships - better understand their needs,
+              identify new opportunities to help address any problems faster</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-news section section_theme-light section_align-center" id="news">
+      <h2
+        class="heading heading_level-5 heading_desktop-level-2 section-news__heading can-animate can-animate_origin-top can-animate_hidden-at-first">
+        Trending news from Coca</h2>
+      <p class="paragraph paragraph_color-gray section-news__paragraph can-animate can-animate_origin-top can-animate_hidden-at-first"
+        data-delay="250">
+        we have some new Service to pamper you
+      </p>
+      <div class="section-news__carousel carousel">
+        <button class="carousel__controls-button button carousel__controls-button_prev" id="news-prev">
+          <img src="./assets/arrow-left.svg" alt="Previous" class="carousel__button-img">
+        </button>
+        <div class="carousel__wrapper wrapper_flex">
+          <div class="section-news__card card wrapper_desktop-dir-vertical wrapper_dir-vertical">
+            <img class="picture carousel__picture" src="assets/news1.png"
+              alt="What makes an authentic employee profile, and why does it matter?">
+            <div class="card__info paragraph_color-gray wrapper_flex">
+              <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
+              <cite class="card__author">by : Albert Sans</cite>
+            </div>
+            <a href=""
+              class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4 link section-news__card-heading">What
+              makes an authentic
+              employee
+              profile, and why does it
+              matter ?</a>
+          </div>
+          <div class="section-news__card card wrapper_desktop-dir-vertical wrapper_dir-vertical">
+            <img class="carousel__picture picture" src="assets/news2.png"
+              alt="How to build a Kaylen relationship with a good company">
+            <div class="card__info paragraph_color-gray wrapper_flex">
+              <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
+              <cite class="card__author">by : Albert Sans</cite>
+            </div>
+            <a href=""
+              class="heading_level-6 heading_desktop-level-4 text-content_weight-semi-bold link section-news__card-heading">How
+              to build a Kaylen
+              relationship with a good company</a>
+          </div>
+          <div class="section-news__card card wrapper_desktop-dir-vertical wrapper_dir-vertical">
+            <img class="carousel__picture picture" src="assets/news1.png"
+              alt="What makes an authentic employee profile, and why does it matter ?">
+            <div class="card__info paragraph_color-gray wrapper_flex">
+              <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
+              <cite class="card__author">by : Albert Sans</cite>
+            </div>
+            <a href=""
+              class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4 link section-news__card-heading">What
+              makes an authentic
+              employee
+              profile, and why does it
+              matter?</a>
+          </div>
+        </div>
+        <button class="carousel__controls-button button carousel__controls-button_next" id="news-next"><img src="./assets/arrow-right.svg" alt="Next" class="carousel__button-img"></button>
+      </div>
+    </section>
+    <section class="section section-reviews section_theme-light" id="reviews">
+      <div class="wrapper section-reviews__wrapper wrapper_grid">
+        <h2 class="heading heading_level-5 heading_desktop-level-2 can-animate can-animate_origin-left">
+          What our customers are saying
+        </h2>
+        <p class="paragraph paragraph_color-gray heading_desktop-level-6 text-content_size-medium section-reviews__paragraph can-animate can-animate_origin-left can-animate_hidden-at-first"
+          data-delay="250">
+          We are trusted by numerous companies from different business to meet their needs.
+        </p>
+      </div>
+      <div
+        class="wrapper wrapper_desktop-dir-horizontal wrapper_flex can-animate can-animate_hidden-at-first can-animate_origin-top"
+        data-delay="500">
+        <div class="section-reviews__quotes"></div>
+        <div class="section-reviews__carousel carousel">
+          <div class="carousel__wrapper wrapper_flex">
+            <div class="review wrapper_flex wrapper_dir-vertical">
+              <div class="review__rating">
+                <img src="assets/5 stars.png" alt="Rating: 5.0" class="review__stars">
+                <span class="review__rating-value">5.0</span>
+              </div>
+              <h3 class="heading heading_level-6 heading_desktop-level-3">“With Agency the results are very satisfying.
+                wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h3>
+              <div class="review__author">
+                <img src="assets/avatar.png" alt="Renee Wells" class="review__avatar">
+                <h6 class="text-content_weight-semi-bold text-content_size-medium heading_desktop-level-6">Renee Wells
+                </h6>
+                <span class="review__author-occupation text-content_size-small paragraph_color-gray">Product Designer,
+                  Quotient</span>
+              </div>
+            </div>
+            <div class="review wrapper_flex wrapper_dir-vertical">
+              <div class="review__rating">
+                <img src="assets/5 stars.png" alt="Rating: 5.0" class="review__stars">
+                <span class="review__rating-value">5.0</span>
+              </div>
+              <h3 class="heading heading_level-6 heading_desktop-level-3">“With Agency the results are very satisfying.
+                wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h3>
+              <div class="review__author">
+                <img src="assets/avatar.png" alt="Renee Wells" class="review__avatar">
+                <h6 class="text-content_weight-semi-bold text-content_size-medium heading_desktop-level-6">Renee Wells
+                </h6>
+                <span class="review__author-occupation text-content_size-small paragraph_color-gray">Product Designer,
+                  Quotient</span>
+              </div>
+            </div>
+            <div class="review wrapper_flex wrapper_dir-vertical">
+              <div class="review__rating">
+                <img src="assets/5 stars.png" alt="Rating: 5.0" class="review__stars">
+                <span class="review__rating-value">5.0</span>
+              </div>
+              <h3 class="heading heading_level-6 heading_desktop-level-3">“With Agency the results are very satisfying.
+                wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h3>
+              <div class="review__author">
+                <img src="assets/avatar.png" alt="Renee Wells" class="review__avatar">
+                <h6 class="text-content_weight-semi-bold text-content_size-medium heading_desktop-level-6">Renee Wells
+                </h6>
+                <span class="review__author-occupation text-content_size-small paragraph_color-gray">Product Designer,
+                  Quotient</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-reviews__carousel-controls">
+          <button class="section-reviews__carousel-button section-reviews__carousel-button_prev" aria-label="Previous"
+            id="reviews-prev"></button>
+          <button class="section-reviews__carousel-button section-reviews__carousel-button_next" aria-label="Next"
+            id="reviews-next"></button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="content">
+        <div class="wrapper wrapper_desktop-dir-horizontal wrapper_grid footer__wrapper">
+          <div class="wrapper wrapper_desktop-dir-vertical wrapper_flex">
+            <h2 class="heading heading_level-5 heading_desktop-level-2 can-animate can-animate_origin-left">
+              Think beyond the wave
+            </h2>
+            <div class="footer__important-message important-message can-animate can-animate_origin-left"
+              data-delay="250">
+              <hr class="highlight">
+              <p class="text-content_size-large text-content_weight-bold heading_desktop-level-5">
+                Ask about Sans products, pricing, implementation, or anything else. Our highly trained reps are standing
+                by,
+                ready to help
+              </p>
+            </div>
+          </div>
+          <button
+            class="cta-button text-content_weight-bold can-animate can-animate_hidden-at-first can-animate_origin-left"
+            data-delay="500">Try for free</button>
+        </div>
+        <div class="wrapper wrapper_desktop-dir-horizontal wrapper_flex footer__info-and-menu-wrapper">
+          <div class="footer__company-info wrapper_desktop-dir-vertical wrapper_flex">
+            <img src="assets/Logo.png" alt="Logo of Coca"
+              class="footer__logo can-animate can-animate_origin-bottom can-animate_hidden-at-first" data-delay="750">
+            <p class="paragraph text-content_size-medium text-content_weight-medium paragraph_color-gray footer__paragraph paragraph_desktop-color-black can-animate_origin-bottom can-animate_hidden-at-first"
+              data-delay="1000">We built an elegant solution. Our team created a fully integrated sales
+              and marketing solution for SMBs</p>
+          </div>
+          <nav class="footer__menu menu text-content_size-large">
+            <ul class="footer__menu-list">
+              <li
+                class="footer__menu-title menu-item text-content_weight-bold can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="1250">Company</li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="1500"><a href="" class="footer__menu-link link">About</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="1750"><a href="" class="footer__menu-link link">Pricing</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="2000"><a href="" class="footer__menu-link link">Jobs</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="2250"><a href="" class="footer__menu-link link">Blog</a></li>
+            </ul>
+            <ul class="footer_menu-list">
+              <li
+                class="footer__menu-title text-content_weight-bold menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="2500">Product</li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="2750"><a href="" class="footer__menu-link link">Sales Software</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="3000"><a href="" class="footer__menu-link link">Marketplace</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="3250"><a href="" class="footer__menu-link link">Terms & Conditions</a>
+              </li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="3500"><a href="" class="footer__menu-link link">Privacy Policy</a></li>
+            </ul>
+            <ul class="footer_menu-list">
+              <li
+                class="footer__menu-title  text-content_weight-bold menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="3750">Discover</li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="4000"><a href="" class="footer__menu-link link">CRM Comparision</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="4250"><a href="" class="footer__menu-link link">Partner Program</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="4500"><a href="" class="footer__menu-link link">What is CRM</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="4750"><a href="" class="footer__menu-link link">Resourse</a></li>
+            </ul>
+            <ul class="footer_menu-list">
+              <li
+                class="footer__menu-title text-content_weight-bold menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="5000">Help Center</li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="5250"><a href="" class="footer__menu-link link">Community</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="5500"><a href="" class="footer__menu-link link">Knowledge Base</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="5750"><a href="" class="footer__menu-link link">Academy</a></li>
+              <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
+                data-delay="6000"><a href="" class="footer__menu-link link">Support</a></li>
+            </ul>
+          </nav>
+          <div class="footer__menu_mobile">
+            <p class="paragraph_color-gray text-content_size-medium text-content_weight-medium">Privacy Policy</p>
+            <p class="paragraph_color-gray text-content_size-medium text-content_weight-medium">Terms & Conditions</p>
+            <p class="paragraph_color-gray text-content_size-medium text-content_weight-medium">Support</p>
+          </div>
+          <hr class="footer__separator">
+          <p class="footer__copyright paragraph_color-gray text-content_size-medium text-content_weight-medium">&copy;
+            Copyright 2023 All Rights Reserved</p>
+        </div>
+      </div>
+      <div class="circle circle_color-orange circle_size-large circle_position-top-left"></div>
+      <div class="circle circle_color-green circle_size-small circle_position-top-right"></div>
+    </footer>
+    <div class="backdrop"></div>
+    <div class="offcanvas">
+      <button class="menu-button button" aria-label="Close menu" id="close-menu"></button>
+      <nav class="offcanvas__menu">
+        <ul class="offcanvas__menu-list menu-list">
           <li class="menu-list__item menu-item">
             <a href="" class="menu-list__link link">Home</a>
           </li>
@@ -34,351 +518,10 @@
           </li>
         </ul>
       </nav>
-      <button class="header__menu-button button"></button>
-    </header>
-
-    <section class="section-intro section section_theme-light" id="intro">
-      <h1 class="heading heading_level-1">Digitally forward creative</h1>
-      <div class="important-message">
-        <hr class="highlight">
-        <p class="paragraph">Our biggest challenge is making sure we're always designing and building
-          products that will help you run your business better.</p>
-        </div>
-      <form class="cta-form">
-        <label for="email" class="cta-form__prompt">Enter your email</label>
-        <input type="text" class="cta-form__input input input_type-text"
-          autocomplete="email" name="email" id="email" placeholder=" ">
-        <button class="cta-form__button button  text-content_weight-bold" type="button">Try for free</button>
-      </form>
-
-      <div class="wrapper wrapper_dir-vertical">
-        <div class="section-intro__sales section-intro__picture"></div>
-        <div class="section-intro__customer-growth"></div>
-        <div class="section-intro__statistics section-intro__picture"></div>
-      </div>
-    </section>
-
-    <section class="section section-advantages section_theme-dark" id="advantages">
-      <h2 class="heading heading heading_level-2">Sans helps our client solve complex customer problems with
-        date that does
-        more.</h2>
-      <p class="section-advantages__paragraph paragraph">Our platform offers the modern enterprise full control of how date can be
-        access and used with industry leading software solutions for identity, activation, and date collaboration</p>
-      <ul class="advantages-list list">
-        <li>
-          <div class="advantages-list__icon icon icon_image-calendar"></div>
-          <h3 class="heading heading_level-3">Build your date fundamental</h3>
-          <p class="section-advantages__paragraph paragraph">
-            Build access to date, develop valuable business insights and drive revenue while maintaining full control
-            over access and use of date at all times.
-          </p>
-        </li>
-        <li>
-          <div class="advantages-list__icon icon icon_image-checklist"></div>
-          <h3 class="heading heading_level-3">Measure more effective</h3>
-          <p class="section-advantages__paragraph paragraph">
-            Effectively measure people-based campaigns with the freedom to choose from best-of breed partners to
-            optimize and drive media innovation.
-          </p>
-        </li>
-        <li>
-          <div class="advantages-list__icon icon icon_image-marked-list"></div>
-          <h3 class="heading heading_level-3">Activate your date</h3>
-          <p class="section-advantages__paragraph paragraph">
-            Accurately address your specific audiences at scale across any channel, platform, publisher or network and
-            safely translate date between identity space to improve results.
-          </p>
-        </li>
-        <li>
-          <div class="advantages-list__icon icon icon_image-shield"></div>
-          <h3 class="heading heading_level-3">Strengthen consumer privacy</h3>
-          <p class="paragraph section-advantages__paragraph">
-            Protect your customer date with leading privacy-preserving technologies and advanced techniques to minimize
-            date movement while still enabling insight generation.
-          </p>
-        </li>
-      </ul>
-    </section>
-    <section class="section-features section section_theme-light" id="features">
-      <div class="section-features__desktop">
-        <div class="section-features__statistics"></div>
-      </div>
-      <div class="wrapper wrapper_desktop-dir-vertical">
-        <h2 class="heading heading_level-2">
-          Passion to increase company revenue up to 85%
-        </h2>
-        <p class="paragraph">
-          Automate your sales, marketing and service in one platform. Avoid date leaks and enable consistent messaging
-        </p>
-        <ul class="features-list">
-          <li class="features-list__item list-item">
-            <div class="icon icon_image-check"></div>
-            <p class="paragraph">Close more deals with single - page contact managment</p>
-          </li>
-          <li class="features-list__item list-item">
-            <div class="icon icon_image-check"></div>
-            <p class="paragraph">Enjoy one-click calling, call scripts and voicemail automation</p>
-          </li>
-          <li class="features-list__item list-item">
-            <div class="icon icon_image-check"></div>
-            <p class="paragraph">Take stages and milestones of your deals to keep the sales process an
-              track</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section section-statistics section_theme-light" id="statistics">
-      <div class="section-statistics__wrapper wrapper wrapper_desktop-dir-horizontal">
-        <div class="section-statistics__item">
-          <h2 class="heading heading_level-2">17k</h2>
-          <p class="paragraph">happy customers on worldwide</p>
-        </div>
-        <div class="section-statistics__item">
-          <h2 class="heading heading_level-2">15+</h2>
-          <p class="paragraph">years of work experience</p>
-        </div>
-        <div class="section-statistics__item">
-          <h2 class="heading heading_level-2">50+ </h2>
-          <p class="paragraph">creative & passionate members</p>
-        </div>
-        <div class="section-statistics__item">
-          <h2 class="heading heading_level-2">100+</h2>
-          <p class="paragraph">integrations</p>
-        </div>
-      </div>
-
-      <div class="picture picture_image-team"></div>
-
-      <div class="wrapper wrapper_desktop-dir-horizontal">
-        <h2 class="heading heading_level-2">Lift your business to new heights with our digital
-          marketing services</h2>
-        <p class="paragraph">To build software that gives customer facing teams in small and
-          medium-sized businesses the ability to create rewarding and long-lasting relationships with customers</p>
-      </div>
-    </section>
-    <section class="section-companies section section_theme-light" id="companies">
-      <div class="wrapper wrapper_desktop-dir-horizontal">
-        <div class="wrapper wrapper_desktop-dir-vertical">
-          <h2 class="heaading heading_level-2">890+</h2>
-          <p class="paragraph">some big companies that we work with, and trust us very much</p>
-        </div>
-        <div class="wrapper wrapper_desktop-dir-horizontal">
-          <img class="section-company__logo" src="./assets/Airbnb Logo.png" alt="Airbnb">
-          <img class="section-company__logo" src="assets/Amazon Logo.png" alt="Amazon">
-          <img class="section-company__logo" src="assets/FedEx Logo.png" alt="FedEx">
-          <img class="section-company__logo" src="assets/Microsoft Logo.png" alt="Microsoft">
-          <img class="section-company__logo" src="assets/Google Logo.png" alt="Google">
-          <img class="section-company__logo" src="assets/Group.png" alt="OLA">
-          <img class="section-company__logo" src="assets/Walmart Logo.png" alt="Walmart">
-          <img class="section-company__logo" src="assets/OYO Logo.png" alt="OYO">
-        </div>
-      </div>
-    </section>
-    <section class="section-our-work section section_theme-light" id="our-work">
-      <div class="wrapper wrapper_desktop-dir-horizontal">
-        <div class="section-our-work__card card card_desktop-dir-horizontal">
-          <div class="card__picture card__picture_image-work-1">
-            <div class="card__icon icon icon_rounded icon_image-smile"></div>
-          </div>
-        </div>
-        <div class="wrapper wrapper_desktop-dir-vertical">
-          <h4 class="heading heading_level-4">Lead happiness for customers</h4>
-          <p class="paragraph">Build more meaningful and lasting relationships - better understand their needs, identify
-            new opportunities to help address any problems faster</p>
-        </div>
-        <div class="section-our-work__card card card_desktop-dir-horizontal">
-          <div class="card__picture card__picture_image-work-2">
-            <div class="card__icon icon icon_rounded icon_image-arrow"></div>
-          </div>
-          <div class="wrapper wrapper_desktop-dir-vertical">
-            <h4 class="heading heading_level-4">Mutually support each other</h4>
-            <p class="paragraph">Build more meaningful and lasting relationships - better understand their needs,
-              identify new opportunities to help address any problems faster</p>
-          </div>
-        </div>
-        <div class="section-our-work__card card card_desktop-dir-horizontal">
-          <div class="card__picture card__picture_image-work-3">
-            <div class="card__icon icon icon_rounded icon_image-people"></div>
-          </div>
-          <div class="wrapper wrapper_desktop-dir-vertical">
-            <h4 class="heading heading_level-4">Have fun growing together</h4>
-            <p class="paragraph">Build more meaningful and lasting relationships - better understand their needs,
-              identify new opportunities to help address any problems faster</p>
-          </div>
-        </div>
-        <div class="section-our-work__card card card_desktop-dir-horizontal">
-          <div class="card__picture card__picture_image-work-4">
-            <div class="card__icon icon icon_rounded icon_image-desk"></div>
-          </div>
-          <div class="wrapper wrapper_desktop-dir-vertical">
-            <h4 class="heading heading_level-4">Make Your Business Grow</h4>
-            <p class="paragraph">Build more meaningful and lasting relationships - better understand their needs,
-              identify new opportunities to help address any problems faster</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-news section section_theme-light section_align-center" id="news">
-      <h2 class="heading heading_level-2">Trending news from Coca</h2>
-      <p class="paragraph">
-        we have some new Service to pamper you
-      </p>
-      <div class="section-news__carousel carousel">
-        <div class="carousel__controls">
-          <button class="carousel__controls-prev"></button>
-          <button class="carousel__controls-next"></button>
-        </div>
-        <div class="section-news__card card card_desktop-dir-vertical">
-          <img class="card__picture" src="assets/news1.png"
-            alt="What makes an authentic employee profile, and why does it matter?">
-          <div class="card__info">
-            <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
-            <cite class="card__author">by : Albert Sans</cite>
-          </div>
-          <a href="" class="heading heading_level-2 link">What makes an authentic employee profile, and why does it
-            matter ?</a>
-        </div>
-        <div class="section-news__card card card_desktop-dir-vertical">
-          <img class="card__picture" src="assets/news2.png"
-            alt="How to build a Kaylen relationship with a good company">
-          <div class="card__info">
-            <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
-            <cite class="card__author">by : Albert Sans</cite>
-          </div>
-          <a href="" class="heading heading_level-2 link">How to build a Kaylen relationship with a good company</a>
-        </div>
-        <div class="section-news__card card card_desktop-dir-vertical">
-          <img class="card__picture" src="assets/news1.png"
-            alt="What makes an authentic employee profile, and why does it matter ?">
-          <div class="card__info">
-            <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
-            <cite class="card__author">by : Albert Sans</cite>
-          </div>
-          <a href="" class="heading heading_level-2 link">What makes an authentic employee profile, and why does it
-            matter?</a>
-        </div>
-      </div>
-    </section>
-    <section class="section section-reviews section_theme-light" id="reviews">
-      <div class="wrapper wrapper_desktop-dir-horizontal">
-        <h2 class="heading heading_level-2">
-          What our customer are saying
-        </h2>
-        <p class="paragraph">
-          We are trusted numerous companies from different business to meet their needs.
-        </p>
-      </div>
-      <div class="wrapper wrapper_desktop-dir-horizontal">
-        <div class="section-reviews__quotes"></div>
-        <div class="section-review__carousel carousel">
-          <div class="review">
-            <div class="review__rating">
-              <img src="assets/5 stars.png" alt="Rating: 5.0" class="review__stars">
-              <span class="review__rating-value">5.0</span>
-            </div>
-            <h3 class="heading section__heading_level-3">“With Agency the results are very satisfying.
-              wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h3>
-            <div class="review__author">
-              <img src="assets/avatar.png" alt="Renee Wells" class="review__avatar">
-              <h6 class="heading heading-level-6">Renee Wells</h6>
-              <span class="review__author-occupation">Product Designer, Quotient</span>
-            </div>
-          </div>
-          <div class="review">
-            <div class="review__rating">
-              <img src="assets/5 stars.png" alt="Rating: 5.0" class="review__stars">
-              <span class="review__rating-value">5.0</span>
-            </div>
-            <h3 class="heading section__heading_level-3">“With Agency the results are very satisfying.
-              wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h3>
-            <div class="review__author">
-              <img src="assets/avatar.png" alt="Renee Wells" class="review__avatar">
-              <h6 class="heading heading-level-6">Renee Wells</h6>
-              <span class="review__author-occupation">Product Designer, Quotient</span>
-            </div>
-          </div>
-          <div class="review">
-            <div class="review__rating">
-              <img src="assets/5 stars.png" alt="Rating: 5.0" class="review__stars">
-              <span class="review__rating-value">5.0</span>
-            </div>
-            <h3 class="heading section__heading_level-3">“With Agency the results are very satisfying.
-              wrapped with Hight quality and innovative design that makes a surge of visitors on my website”</h3>
-            <div class="review__author">
-              <img src="assets/avatar.png" alt="Renee Wells" class="review__avatar">
-              <h6 class="heading heading-level-6">Renee Wells</h6>
-              <span class="review__author-occupation">Product Designer, Quotient</span>
-            </div>
-          </div>
-        </div>
-        <div class="carousel__controls">
-          <button class="carousel__prev"></button>
-          <button class="carousel__next"></button>
-        </div>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="content">
-        <div class="wrapper wrapper_desktop-dir-horizontal">
-          <div class="wrapper wrapper_desktop-dir-vertical">
-            <h2 class="heading heading__level-2">
-              Think beyond the wave
-            </h2>
-            <hr class="highlight">
-            <p class="paragraph">
-              Ask about Sans products, pricing, implementation, or anything else. Our highly trained reps are standing
-              by,
-              ready to help
-            </p>
-          </div>
-          <button class="button">Try for free</button>
-        </div>
-        <div class="wrapper wrapper_desktop-dir-horizontal">
-          <div class="footer__company-info wrapper_desktop-dir-vertical">
-            <img src="assets/Logo.png" alt="Logo of Coca">
-            <p class="paragraph">We built an elegant solution. Our team created a fully integrated sales
-              and marketing solution for SMBs</p>
-          </div>
-          <nav class="footer__menu menu">
-            <ul class="footer__menu-list">
-              <li class="footer__menu-title menu-item">Company</li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">About</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Pricing</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Jobs</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Blog</a></li>
-            </ul>
-            <ul class="footer_menu-list">
-              <li class="footer__menu-title menu-item">Product</li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Sales Software</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Marketplace</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Terms & Conditions</a>
-              </li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Privacy Policy</a></li>
-            </ul>
-            <ul class="footer_menu-list">
-              <li class="footer__menu-title menu-item">Discover</li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">CRM Comparision</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Partner Program</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">What is CRM</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Resourse</a></li>
-            </ul>
-            <ul class="footer_menu-list">
-              <li class="footer__menu-title menu-item">Help Center</li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Community</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Knowledge Base</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Academy</a></li>
-              <li class="footer__menu-item menu-item"><a href="" class="footer__menu-link link">Support</a></li>
-            </ul>
-          </nav>
-          <hr class="separator">
-          <p class="copyright">&copy; Copyright 2023 All right Reserved</p>
-        </div>
-      </div>
-      <div class="circle circle_color-orange circle_size-large"></div>
-      <div class="circle circle_color-green circle_size-small"></div>
-    </footer>
+    </div>
+    <script src="./js/handle-scroll.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/scroll-carousels.js"></script>
   </div>
 </body>
 

@@ -1,8 +1,19 @@
 @use "./_dir/wrapper_dir-horizontal"
 @use "./_dir/wrapper_dir-vertical"
+@use "./_grid/wrapper_grid"
+@use "./_flex/wrapper_flex"
+@use "./_desktop-flex/wrapper_desktop-flex"
+@use "./_desktop-grid/wrapper_desktop-grid"
+@use "./_desktop-dir/wrapper_desktop-dir-vertical"
   
 .wrapper
   position: relative
-  display: flex
-  flex-wrap: wrap
-  width: 100%
+  width: calc(100vw - 40px)
+
+@media (pointer: fine)
+  .wrapper
+    width: auto
+
+@media screen and (min-width: 768px)
+  .wrapper
+    width: auto

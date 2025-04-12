@@ -1,9 +1,9 @@
-.heading_level-1 
-  font-size: 54px
+@mixin heading-1
+  font-size: 72px
   letter-spacing: -3px
   line-height: 120%
   font-weight: 600
   
-@media screen and (min-width: 768px)
-  .heading_level-1
-    font-size: 72px
+.heading_level-1 
+  @include heading-1
+  

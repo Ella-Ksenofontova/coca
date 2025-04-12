@@ -1,0 +1,15 @@
+.footer__menu_mobile
+  display: flex
+  flex-wrap: wrap
+  width: calc(100vw - 40px)
+  justify-content: center
+  gap: 15px
+
+@media screen and (min-width: 350px)
+  .footer__menu_mobile
+    justify-content: space-between
+    gap: 25px
+
+@media screen and (min-width: 768px)
+  .footer__menu_mobile
+    display: none

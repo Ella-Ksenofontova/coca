@@ -2,3 +2,13 @@
 @use "./__statistics/statistics"
 @use "./__customer-growth/customer-growth"
 @use "./__picture/picture"
+@use "./__wrapper/wrapper"
+@use "./__paragraph/paragraph"
+@use "./__important-message/important-message"
+
+@media screen and (min-width: 768px)
+  .section-intro
+    display: grid
+    grid-template-columns: repeat(2, auto)
+    column-gap: 20px
+    overflow: hidden

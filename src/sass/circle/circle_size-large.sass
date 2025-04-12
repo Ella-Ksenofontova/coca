@@ -1,11 +1,15 @@
 .circle_size-large
   width: calc(60vw - 120px)
   height: calc(60vw - 120px)
-  filter: blur(120px)
-  $blur: 120px
+  filter: blur(60px)
 
 
-@media screen and (min-width: 768px)
+@media screen and (min-width: 400px)
   .circle_size-large
     width: 40vw
     height: 40vw
+    filter: blur(120px)
+
+@media screen and (min-width: 400px)
+  .circle_size-large
+    filter: blur(200px)

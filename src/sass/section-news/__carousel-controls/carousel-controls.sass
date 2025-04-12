@@ -1,0 +1,21 @@
+@use "../../colors"
+  
+.section-news__carousel-controls
+  display: flex
+  $picture-height: calc(190 / 291 * calc(100vw - 40px))
+  position: sticky
+  width: 40px
+  height: 40px
+  top: calc($picture-height / 2)
+  left: calc(100vw - 92.5px)
+  border-radius: 50%
+  background-image: url("../../../assets/controls.png")
+  background-repeat: no-repeat
+  background-position: center
+  background-color: colors.$neutral-10
+
+@media screen and (min-width: 768px)
+  .section-news__carousel-controls
+    $picture-height: calc(190 / 291 * 50vw)
+    top: calc($picture-height / 2)
+    left: calc(50vw - 47.5px + 15px - 20px - 7.5px)

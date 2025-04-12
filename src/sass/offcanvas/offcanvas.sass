@@ -1,0 +1,25 @@
+@use "./__menu/menu"
+@use "./__menu-list/menu-list"
+@use "./offcanvas_show"
+
+.offcanvas
+  display: flex
+  flex-direction: column
+  align-items: end
+  gap: 15px
+  position: fixed
+  z-index: 1000
+  top: 0
+  right: 0
+  height: 100vh
+  max-width: 0
+  padding-top: calc(18px + 70 / 150 * min(75px, 15vw))
+  background: white
+  visibility: hidden
+  transition: all 1s
+
+  *
+    opacity: 0
+    transition: all 1s
+
+

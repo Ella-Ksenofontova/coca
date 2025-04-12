@@ -1,7 +1,6 @@
-.heading_level-4
-  font-size: 1.2rem
+@mixin heading-4
+  font-size: 32px
   letter-spacing: -1px
-
-@media screen and (min-width: 768px)
-  .heading_level-4
-    font-size: 32px
+  
+.heading_level-4
+  @include heading-4
