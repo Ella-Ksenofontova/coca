@@ -1,0 +1,20 @@
+@use "../../colors"
+@use "./_bg/card_bg-dark"
+
+.section-pricing__card
+  position: relative
+  padding: 24px 20px
+  background-color: colors.$neutral-10
+  border: 1px solid colors.$neutral-30
+  border-radius: 12px
+  text-align: left
+  width: calc(100vw - 40px)
+  max-width: 100%
+  *
+    max-width: 100%
+
+@media screen and (min-width: 1200px)
+  .section-pricing__card
+    width: calc((100vw - 360px) / 3)
+    &:nth-child(2n + 1)
+      margin-top: 55px

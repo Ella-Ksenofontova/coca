@@ -1,0 +1,30 @@
+@use "../colors"
+@use "./__inputs-wrapper/inputs-wrapper"
+@use "./__input/input"
+@use "./__label/label"
+@use "./__textarea/textarea"
+@use "./__submit/submit"
+@use "./__select-and-input/select-and-input"
+@use "./__select/select"
+@use "./__option/option"
+@use "./__options/options"
+@use "./__selected/selected"
+
+.feedback-form
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 5
+  padding: 24px
+  width: calc(100vw - 60px)
+  border: 1px solid colors.$neutral-40
+  background-color: white
+
+@media screen and (min-width: 768px)
+  .feedback-form
+    grid-column: 1
+    grid-row: 1
+    left: 20px
+    transform: translateX(8.33%)
+    width: fit-content
+    padding: 48px 56px

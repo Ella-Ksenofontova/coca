@@ -1,15 +1,17 @@
 let newsCurrent = 0;
 let reviewsCurrent = 0;
+let scrollEnabled = { "news": true, "reviews": true };
 
-function moveNext(current, selector, isResizing=false) {
+function moveNext(current, selector, isResizing = false) {
   const items = Array.from(document.querySelectorAll(selector));
   const parent = items[0].parentElement;
   const maxIndex = items.length - 1;
   const spaceLeft = parent.scrollWidth - parent.scrollLeft - (items[current + 1] ? Math.round(items[current + 1].scrollWidth) : 0) - 15;
-  const isScrolledIntoView = Math.round(items[current].getBoundingClientRect().left - parent.getBoundingClientRect().left) >= 0 && Math.round(parent.getBoundingClientRect().right - items[current].getBoundingClientRect().right) >= 0
-  
+  const id = parent.parentElement.classList.contains("section-news__carousel") ? "news" : "reviews";
+
   if (current === maxIndex || Math.abs(Math.round(spaceLeft) - Math.round(items[current + 1].scrollWidth)) <= 1 && innerWidth >= 768 && items[current + 1].scrollWidth < parent.offsetWidth) {
     const delta = parent.scrollWidth;
+    scrollEnabled[id] = false;
     parent.scrollBy({
       left: -delta,
       behavior: "smooth"
@@ -20,12 +22,14 @@ function moveNext(current, selector, isResizing=false) {
     } else {
       reviewsCurrent = 0;
     }
-  } else if (isScrolledIntoView || isResizing) {
-    const delta = isResizing ? items[current + 1].getBoundingClientRect().left - parent.getBoundingClientRect().left : items[current + 1].getBoundingClientRect().width + 15;
-    const behaviour = isResizing ? "instant" : "smooth"; 
+  } else if (scrollEnabled[id] || isResizing) {
+    const padding = parent.parentElement.classList.contains("section-news__carousel") ? 15 : 0
+    const delta = isResizing ? items[current + 1].getBoundingClientRect().left - parent.getBoundingClientRect().left : (items[current + 1].getBoundingClientRect().width + padding).toFixed(4);
+    const behaviour = isResizing ? "instant" : "smooth";
+    scrollEnabled[id] = false;
     parent.scrollBy({
       left: delta,
-      behavior: behaviour 
+      behavior: behaviour
     });
 
     if (parent.parentElement.classList.contains("section-news__carousel")) {
@@ -36,29 +40,36 @@ function moveNext(current, selector, isResizing=false) {
   }
 }
 
-function movePrevious(current, selector, isResizing=false) {
+function movePrevious(current, selector, isResizing = false) {
   const items = Array.from(document.querySelectorAll(selector));
   const parent = items[0].parentElement;
-  const isScrolledIntoView = Math.round(items[current].getBoundingClientRect().left - parent.getBoundingClientRect().left) >= 0 && Math.round(parent.getBoundingClientRect().right - items[current].getBoundingClientRect().right) >= 0;
 
-  if (current === 0 || Math.round(parent.scrollLeft + 7.5) < items[current - 1].scrollWidth && isScrolledIntoView) {
-    const delta = items.reduce((prev, item, index) => prev + (index > 0 ? item.getBoundingClientRect().width : 0), 0) + 15 * items.length;
+  const id = parent.parentElement.classList.contains("section-news__carousel") ? "news" : "reviews";
+
+  if (current === 0 || Math.round(parent.scrollLeft + 7.5) < items[current - 1].scrollWidth && scrollEnabled[id]) {
+    scrollEnabled[id] = false;
+    const delta = parent.scrollWidth;
     parent.scrollBy({
       left: delta,
       behavior: "smooth"
-    })
+    });
+
     if (parent.parentElement.classList.contains("section-news__carousel")) {
       newsCurrent = items.length - 1;
     } else {
       reviewsCurrent = items.length - 1;
     }
-  } else if (isScrolledIntoView || isResizing) {
-    const delta = isResizing ? parent.getBoundingClientRect().left - items[current - 1].getBoundingClientRect().left : items[current - 1].getBoundingClientRect().width + 15;
-    const behaviour = isResizing ? "instant" : "smooth"; 
+  } else if (scrollEnabled[id] || isResizing) {
+    const padding = parent.parentElement.classList.contains("section-news__carousel") ? 15 : 0
+    const delta = isResizing ? parent.getBoundingClientRect().left - items[current - 1].getBoundingClientRect().left : (items[current - 1].getBoundingClientRect().width + padding).toFixed(4);
+    const behaviour = isResizing ? "instant" : "smooth";
+
+    scrollEnabled[id] = false;
     parent.scrollBy({
       left: -delta,
       behavior: behaviour
     });
+
     if (parent.parentElement.classList.contains("section-news__carousel")) {
       newsCurrent--;
     } else {
@@ -67,30 +78,73 @@ function movePrevious(current, selector, isResizing=false) {
   }
 }
 
-document.getElementById("news-prev").addEventListener("click", () => {
+document.getElementById("news-prev")?.addEventListener("click", () => {
   movePrevious(newsCurrent, ".section-news__card");
 });
 
-document.getElementById("news-next").addEventListener("click", () => {
+document.getElementById("news-next")?.addEventListener("click", () => {
   moveNext(newsCurrent, ".section-news__card");
 });
 
-document.getElementById("reviews-prev").addEventListener("click", () => {
+document.getElementById("reviews-prev")?.addEventListener("click", () => {
   movePrevious(reviewsCurrent, ".review");
 });
 
-document.getElementById("reviews-next").addEventListener("click", () => {
+document.getElementById("reviews-next")?.addEventListener("click", () => {
   moveNext(reviewsCurrent, ".review");
 });
 
-window.addEventListener("resize", () => {
-  if (newsCurrent > 0) {
-    movePrevious(newsCurrent, ".section-news__card", 1);
-    moveNext(newsCurrent, ".section-news__card", 1);
+if (document.title === "Coca") {
+  window.addEventListener("resize", () => {
+    moveCarousel(reviewsCurrent, ".review");
+    moveCarousel(newsCurrent, ".section-news__card");
+  });
+}
+
+const carousels = document.querySelectorAll(".carousel__wrapper")
+for (let carousel of carousels) {
+  const id = carousel.parentElement.classList.contains("section-news__carousel") ? "news" : "reviews";
+  carousel.addEventListener("scrollend", () => {
+    scrollEnabled[id] = true;
+  })
+}
+
+function handleTouchEnd(event) {
+  let parent = event.target.parentElement;
+  while (parent && !parent.classList.contains("carousel__wrapper")) {
+    parent = parent.parentElement;
   }
 
-  if (reviewsCurrent > 0) {
-    movePrevious(reviewsCurrent, ".review", 1);
-    moveNext(reviewsCurrent, ".review", 1);
+  if (parent) {
+    const childElems = Array.from(parent.children);
+
+    let finalIndex = 0;
+    const selector = parent.parentElement.classList.contains("section-news__carousel") ? ".section-news__card" : ".review";
+
+    for (let elem of childElems) {
+      const rect = elem.getBoundingClientRect();
+      let visibleWidth = Math.min(parent.getBoundingClientRect().right - rect.left, rect.right - parent.getBoundingClientRect().left);
+      const actualWidth = elem.offsetWidth;
+
+      const firstCondition = visibleWidth * 2 >= Math.floor(actualWidth);
+      const secondCondition = parent.getBoundingClientRect().left < rect.left || parent.getBoundingClientRect().right > rect.right;
+
+      if (firstCondition && secondCondition) {
+        const index = childElems.indexOf(elem);
+        finalIndex = index;
+      }
+    }
+
+    if (parent.parentElement.classList.contains("section-news__carousel")) {
+      newsCurrent = finalIndex;
+    } else {
+      reviewsCurrent = finalIndex;
+    }
+
+    moveCarousel(finalIndex, selector);
   }
-});
+}
+
+if (document.title === "Coca") {
+  document.body.addEventListener('touchend', handleTouchEnd);
+}

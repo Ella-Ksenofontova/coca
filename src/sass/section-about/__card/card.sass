@@ -1,0 +1,21 @@
+.section-about__card
+  padding-top: 15px
+  padding-bottom: 65px
+  gap: 16px
+  max-width: min(calc(100vw - 40px), 500px)
+  flex-grow: 1
+  flex-shrink: 0
+  *
+    max-width: 100%
+
+@media screen and (min-width: 768px)
+  .section-about__card
+    width: 500px
+    flex-basis: 500px
+    
+  .section-about__carousel + .section-about__card
+    display: none
+
+  .section-about__carousel
+    .section-about__card
+      padding-top: 0

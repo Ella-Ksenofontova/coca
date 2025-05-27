@@ -1,12 +1,21 @@
 {
   "dependencies": {
+    "@af-utils/scrollend-polyfill": "^0.0.14",
+    "compile-ejs-loader": "^0.0.3",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "ejs": "^3.1.10",
+    "gray-matter": "^4.0.3",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.85.1",
+    "template-ejs-loader": "^0.9.4",
+    "underscore": "^1.13.7",
     "url-loader": "^4.1.1",
+    "val-loader": "^6.0.0",
     "webpack": "^5.98.0"
   },
   "devDependencies": {
+    "ejs-loader": "^0.5.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
@@ -15,7 +24,7 @@
     "webpack-dev-server": "^5.2.0"
   },
   "scripts": {
-    "serve": "webpack serve --open --mode development",
+    "serve": "node server.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"

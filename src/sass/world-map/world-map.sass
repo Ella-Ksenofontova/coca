@@ -1,0 +1,16 @@
+@use "./__geomark/geomark"
+  
+.world-map
+  position: relative
+  width: calc(100vw - 40px)
+  min-width: 500px
+  height: calc(171.48 / 335 * max(100vw - 40px, 500px))
+  background-image: url("../../assets/Map.png")
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+
+@media screen and (min-width: 1200px)
+  .world-map
+    max-width: 70vw
+    height: calc(171.48 / 335 * 70vw)

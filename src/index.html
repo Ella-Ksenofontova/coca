@@ -21,20 +21,20 @@
             <a href="" class="menu-list__link link">Home</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">About</a>
+            <a href="/about" class="menu-list__link link">About</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">Blog</a>
+            <a href="/blog" class="menu-list__link link">Blog</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">Pricing</a>
+            <a href="pricing" class="menu-list__link link">Pricing</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link link_contacts">Contact Us -></a>
+            <a href="./contacts" class="menu-list__link link link_contacts">Contact Us -></a>
           </li>
         </ul>
       </nav>
-      <button class="menu-button button" aria-label="Open menu" id="open-menu"></button>
+      <button class="header__menu-button menu-button button" aria-label="Open menu" id="open-menu"></button>
     </header>
 
     <section class="section-intro section section_theme-light" id="intro">
@@ -219,12 +219,12 @@
         Build more
         meaningful and lasting relationships - better understand their needs, identify new opportunities to help address
         any problems faster</p>
-      <div class="wrapper_desktop-dir-horizontal wrapper_flex can-animate can-animate_origin-left">
-        <div class="section-our-work__card card">
-          <div class="card__picture card__picture_image-work-1">
-            <div class="card__icon icon icon_rounded icon_image-smile"></div>
+      <div class="section-our-work__wrapper wrapper_desktop-dir-horizontal wrapper_flex can-animate can-animate_origin-left">
+        <div class="section-our-work__card wrapper_flex">
+          <div class="section-our-work__card-picture section-our-work__card-picture_image-work-1">
+            <div class="section-our-work__icon icon icon_rounded icon_bg-dark icon_image-smile"></div>
           </div>
-          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+          <div class="section-our-work__card-wrapper wrapper_desktop-dir-vertical wrapper_flex">
             <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Lead happiness for
               customers</h4>
             <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
@@ -232,11 +232,11 @@
               new opportunities to help address any problems faster</p>
           </div>
         </div>
-        <div class="section-our-work__card card">
-          <div class="card__picture card__picture_image-work-2">
-            <div class="card__icon icon icon_rounded icon_image-arrow"></div>
+        <div class="section-our-work__card wrapper_flex">
+          <div class="section-our-work__card-picture section-our-work__card-picture_image-work-2">
+            <div class="section-our-work__icon icon icon_rounded icon_bg-dark icon_image-arrow"></div>
           </div>
-          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+          <div class="section-our-work__card-wrapper wrapper_desktop-dir-vertical wrapper_flex">
             <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Mutually support each
               other</h4>
             <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
@@ -244,11 +244,11 @@
               identify new opportunities to help address any problems faster</p>
           </div>
         </div>
-        <div class="section-our-work__card card">
-          <div class="card__picture card__picture_image-work-3">
-            <div class="card__icon icon icon_rounded icon_image-people"></div>
+        <div class="section-our-work__card wrapper_flex">
+          <div class="section-our-work__card-picture section-our-work__card-picture_image-work-3">
+            <div class="section-our-work__icon icon icon_rounded icon_bg-dark icon_image-people"></div>
           </div>
-          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+          <div class="section-our-work__card-wrapper wrapper_desktop-dir-vertical wrapper_flex">
             <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Have fun growing together
             </h4>
             <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
@@ -256,11 +256,11 @@
               identify new opportunities to help address any problems faster</p>
           </div>
         </div>
-        <div class="section-our-work__card card">
-          <div class="card__picture card__picture_image-work-4">
-            <div class="card__icon icon icon_rounded icon_image-desk"></div>
+        <div class="section-our-work__card wrapper_flex">
+          <div class="section-our-work__card-picture section-our-work__card-picture_image-work-4">
+            <div class="section-our-work__icon icon icon_rounded icon_bg-dark icon_image-desk"></div>
           </div>
-          <div class="card__wrapper wrapper_desktop-dir-vertical wrapper_flex">
+          <div class="section-our-work__card-wrapper wrapper_desktop-dir-vertical wrapper_flex">
             <h4 class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4">Make Your Business Grow
             </h4>
             <p class="paragraph text-content_size-medium text-content_weight-regular paragraph_color-gray">Build more
@@ -283,13 +283,13 @@
         <button class="carousel__controls-button button carousel__controls-button_prev" id="news-prev">
           <img src="./assets/arrow-left.svg" alt="Previous" class="carousel__button-img">
         </button>
-        <div class="carousel__wrapper wrapper_flex">
-          <div class="section-news__card card wrapper_desktop-dir-vertical wrapper_dir-vertical">
-            <img class="picture carousel__picture" src="assets/news1.png"
+        <div class="carousel__wrapper section-news__carousel-wrapper wrapper_flex">
+          <div class="section-news__card wrapper_flex wrapper_desktop-dir-vertical wrapper_dir-vertical">
+            <img class="section-news__carousel-picture" src="assets/news1.png"
               alt="What makes an authentic employee profile, and why does it matter?">
-            <div class="card__info paragraph_color-gray wrapper_flex">
-              <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
-              <cite class="card__author">by : Albert Sans</cite>
+            <div class="section-news__card-info paragraph_color-gray wrapper_flex">
+              <time datetime="2021-01-30" class="section-news__card-time">Published in Insight Jan 30, 2021</time>
+              <cite class="section-news__card-author">by : Albert Sans</cite>
             </div>
             <a href=""
               class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4 link section-news__card-heading">What
@@ -298,24 +298,24 @@
               profile, and why does it
               matter ?</a>
           </div>
-          <div class="section-news__card card wrapper_desktop-dir-vertical wrapper_dir-vertical">
-            <img class="carousel__picture picture" src="assets/news2.png"
+          <div class="section-news__card wrapper_desktop-dir-vertical wrapper_dir-vertical">
+            <img class="section-news__carousel-picture" src="assets/news2.png"
               alt="How to build a Kaylen relationship with a good company">
-            <div class="card__info paragraph_color-gray wrapper_flex">
-              <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
-              <cite class="card__author">by : Albert Sans</cite>
+            <div class="section-news__card-info paragraph_color-gray wrapper_flex">
+              <time datetime="2021-01-30" class="section-news__card-time">Published in Insight Jan 30, 2021</time>
+              <cite class="section-news__card-author">by : Albert Sans</cite>
             </div>
             <a href=""
               class="heading_level-6 heading_desktop-level-4 text-content_weight-semi-bold link section-news__card-heading">How
               to build a Kaylen
               relationship with a good company</a>
           </div>
-          <div class="section-news__card card wrapper_desktop-dir-vertical wrapper_dir-vertical">
-            <img class="carousel__picture picture" src="assets/news1.png"
+          <div class="section-news__card wrapper_desktop-dir-vertical wrapper_dir-vertical">
+            <img class="section-news__carousel-picture" src="assets/news1.png"
               alt="What makes an authentic employee profile, and why does it matter ?">
-            <div class="card__info paragraph_color-gray wrapper_flex">
-              <time datetime="2021-01-30" class="card__time">Published in Insight Jan 30, 2021</time>
-              <cite class="card__author">by : Albert Sans</cite>
+            <div class="section-news__card-info paragraph_color-gray wrapper_flex">
+              <time datetime="2021-01-30" class="section-news__card-time">Published in Insight Jan 30, 2021</time>
+              <cite class="section-news__card-author">by : Albert Sans</cite>
             </div>
             <a href=""
               class="heading_level-6 text-content_weight-semi-bold heading_desktop-level-4 link section-news__card-heading">What
@@ -436,11 +436,11 @@
               <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
                 data-delay="1500"><a href="" class="footer__menu-link link">About</a></li>
               <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
-                data-delay="1750"><a href="" class="footer__menu-link link">Pricing</a></li>
+                data-delay="1750"><a href="pricing" class="footer__menu-link link">Pricing</a></li>
               <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
                 data-delay="2000"><a href="" class="footer__menu-link link">Jobs</a></li>
               <li class="footer__menu-item menu-item can-animate can-animate_origin-bottom can-animate_hidden-at-first"
-                data-delay="2250"><a href="" class="footer__menu-link link">Blog</a></li>
+                data-delay="2250"><a href="/blog" class="footer__menu-link link">Blog</a></li>
             </ul>
             <ul class="footer_menu-list">
               <li
@@ -505,23 +505,24 @@
             <a href="" class="menu-list__link link">Home</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">About</a>
+            <a href="about" class="menu-list__link link">About</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">Blog</a>
+            <a href="/blog" class="menu-list__link link">Blog</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">Pricing</a>
+            <a href="pricing" class="menu-list__link link">Pricing</a>
           </li>
           <li class="menu-list__item menu-item">
-            <a href="" class="menu-list__link link">Contact Us</a>
+            <a href="contacts" class="menu-list__link link">Contact Us</a>
           </li>
         </ul>
       </nav>
     </div>
+    <script src="./js/move-carousel.js"></script>
     <script src="./js/handle-scroll.js"></script>
     <script src="./js/menu.js"></script>
-    <script src="./js/scroll-carousels.js"></script>
+    <script src="./js/scroll-carousels.js" type="module"></script>
   </div>
 </body>
 

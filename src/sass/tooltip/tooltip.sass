@@ -1,0 +1,14 @@
+@use "./_hidden/tooltip_hidden"
+@use "./__description/description"
+@use "./__pin-image/pin-image"
+@use "./_shown/tooltip_shown"
+
+.tooltip 
+  position: absolute
+  z-index: 10
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: fit-content
+  transition: none
+  transform: translateY(5px)
