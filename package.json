@@ -1,14 +1,18 @@
 {
   "dependencies": {
     "@af-utils/scrollend-polyfill": "^0.0.14",
+    "babel-loader": "^10.0.0",
     "compile-ejs-loader": "^0.0.3",
     "copy-webpack-plugin": "^13.0.0",
+    "cors": "^2.8.5",
     "css-loader": "^7.1.2",
     "ejs": "^3.1.10",
     "gray-matter": "^4.0.3",
+    "jest-worker": "^30.0.0-beta.3",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.85.1",
     "template-ejs-loader": "^0.9.4",
+    "terser-webpack-plugin": "^5.3.14",
     "underscore": "^1.13.7",
     "url-loader": "^4.1.1",
     "val-loader": "^6.0.0",

@@ -60,12 +60,12 @@ const makeHtmlConfig = n => {
     publicPath: "/",
     template: htmlWebpackPluginTemplateCustomizer({
 
-      templatePath: './index.ejs',
+      templatePath: 'index.ejs',
 
       templateEjsLoaderOption: {
         data: {
           ...getFrontmatter(getHTMLContent(posts[n])),
-          content: getHTMLContent(path.join("./src/pages/posts-content/", getFrontmatter(getHTMLContent(posts[n])).path_to_real_content))
+          content: getHTMLContent(path.join("src/pages/posts-content/", getFrontmatter(getHTMLContent(posts[n])).path_to_real_content))
         }
       }
     })
@@ -95,22 +95,27 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       filename: 'index.html',
+      publicPath: "/"
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'contacts.html'),
       filename: 'contacts.html',
+      publicPath: "/"
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'pricing.html'),
       filename: 'pricing.html',
+      publicPath: "/"
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'about.html'),
       filename: 'about.html',
+      publicPath: "/"
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'blog.html'),
       filename: 'blog.html',
+      publicPath: "/"
     }),
     ...times(posts.length, makeHtmlConfig),
     new webpack.ProvidePlugin({
@@ -143,14 +148,8 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
-  devServer: {
-    port: 8080,
-    client: {
-      overlay: true,
-    },
-  },
-  mode: "development",
+    path: path.resolve(__dirname, "dist"),
+    filename: 'bundle.js',
+    publicPath: "/"
+  }
 }

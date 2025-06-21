@@ -1,6 +1,5 @@
 const express = require('express');
 const webpack = require('webpack');
-const path = require('path');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express();
@@ -27,5 +26,7 @@ app.use("/about", function (_, response) {
 app.use("/blog", function (_, response) {
   response.redirect("/blog.html")
 });
+app.use(express.static('dist'))
 
-app.listen(8080)
+
+app.listen(8080);
