@@ -1,0 +1,16 @@
+.menu-list__link:not(.link_contacts)
+  display: inline-block
+  position: relative
+
+.menu-list__link::after
+  position: absolute
+  top: calc(100% + 5px)
+  left: 0
+  content: ""
+  display: inline-block
+  width: 0
+  transition: all .5s
+
+.menu-list__link:hover::after
+  width: 100%
+  border: 1px solid #000
