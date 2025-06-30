@@ -74,6 +74,7 @@ const makeHtmlConfig = n => {
 
 module.exports = {
   entry: "./src/index.js",
+  mode: "development",
   plugins: [
     new CopyPlugin({
       patterns: [{
@@ -95,27 +96,38 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       filename: 'index.html',
-      publicPath: "/"
+      publicPath: "/",
+      inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'contacts.html'),
       filename: 'contacts.html',
-      publicPath: "/"
+      publicPath: "/",
+      inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'pricing.html'),
       filename: 'pricing.html',
-      publicPath: "/"
+      publicPath: "/",
+      inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'about.html'),
       filename: 'about.html',
-      publicPath: "/"
+      publicPath: "/",
+      inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'blog.html'),
       filename: 'blog.html',
-      publicPath: "/"
+      publicPath: "/",
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src/pages', '404.html'),
+      filename: '404.html',
+      publicPath: "/",
+      inject: true
     }),
     ...times(posts.length, makeHtmlConfig),
     new webpack.ProvidePlugin({
@@ -144,12 +156,21 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         dependency: { not: ['url'] },
-      }
+      },
+      {
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
+      },
     ],
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: 'bundle.js',
-    publicPath: "/"
+    publicPath: "/",
+    clean: true
+  },
+  watchOptions: {
+    ignored: /node_modules/
   }
 }

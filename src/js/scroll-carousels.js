@@ -6,10 +6,10 @@ function moveNext(current, selector, isResizing = false) {
   const items = Array.from(document.querySelectorAll(selector));
   const parent = items[0].parentElement;
   const maxIndex = items.length - 1;
-  const spaceLeft = parent.scrollWidth - parent.scrollLeft - (items[current + 1] ? Math.round(items[current + 1].scrollWidth) : 0) - 15;
   const id = parent.parentElement.classList.contains("section-news__carousel") ? "news" : "reviews";
 
-  if (current === maxIndex || Math.abs(Math.round(spaceLeft) - Math.round(items[current + 1].scrollWidth)) <= 1 && innerWidth >= 768 && items[current + 1].scrollWidth < parent.offsetWidth) {
+
+  if (current === maxIndex || Math.abs(items[maxIndex].getBoundingClientRect().right - parent.getBoundingClientRect().right) <= 1 && innerWidth >= 768 && items[current + 1]?.scrollWidth < parent.offsetWidth) {
     const delta = parent.scrollWidth;
     scrollEnabled[id] = false;
     parent.scrollBy({
@@ -24,7 +24,7 @@ function moveNext(current, selector, isResizing = false) {
     }
   } else if (scrollEnabled[id] || isResizing) {
     const padding = parent.parentElement.classList.contains("section-news__carousel") ? 15 : 0
-    const delta = isResizing ? items[current + 1].getBoundingClientRect().left - parent.getBoundingClientRect().left : (items[current + 1].getBoundingClientRect().width + padding).toFixed(4);
+    const delta = isResizing ? items[current + 1].getBoundingClientRect().left - parent.getBoundingClientRect().left : (items[current + 1].getBoundingClientRect().width + padding);
     const behaviour = isResizing ? "instant" : "smooth";
     scrollEnabled[id] = false;
     parent.scrollBy({
@@ -46,7 +46,7 @@ function movePrevious(current, selector, isResizing = false) {
 
   const id = parent.parentElement.classList.contains("section-news__carousel") ? "news" : "reviews";
 
-  if (current === 0 || Math.round(parent.scrollLeft + 7.5) < items[current - 1].scrollWidth && scrollEnabled[id]) {
+  if ((current === 0 || parent.scrollLeft === 0) && scrollEnabled[id]) {
     scrollEnabled[id] = false;
     const delta = parent.scrollWidth;
     parent.scrollBy({
@@ -94,12 +94,10 @@ document.getElementById("reviews-next")?.addEventListener("click", () => {
   moveNext(reviewsCurrent, ".review");
 });
 
-if (document.title === "Coca") {
-  window.addEventListener("resize", () => {
-    moveCarousel(reviewsCurrent, ".review");
-    moveCarousel(newsCurrent, ".section-news__card");
-  });
-}
+window.addEventListener("resize", () => {
+  moveCarousel(reviewsCurrent, ".review");
+  moveCarousel(newsCurrent, ".section-news__card");
+});
 
 const carousels = document.querySelectorAll(".carousel__wrapper")
 for (let carousel of carousels) {
@@ -145,6 +143,5 @@ function handleTouchEnd(event) {
   }
 }
 
-if (document.title === "Coca") {
-  document.body.addEventListener('touchend', handleTouchEnd);
-}
+
+document.body.addEventListener('touchend', handleTouchEnd);

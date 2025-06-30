@@ -5,10 +5,14 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const app = express();
 const config = require('./webpack.config.js');
 const compiler = webpack(config);
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
+    writeToDisk: true
   })
 );
 
@@ -26,7 +30,13 @@ app.use("/about", function (_, response) {
 app.use("/blog", function (_, response) {
   response.redirect("/blog.html")
 });
-app.use(express.static('dist'))
 
+app.get("*", function (req, res, next) {
+  if (!(req.url.endsWith(".js") || req.url.endsWith(".ico"))) {
+    res.redirect("/404.html")
+  } else {
+    next();
+  }
+})
 
 app.listen(8080);

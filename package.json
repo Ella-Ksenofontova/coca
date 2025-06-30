@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@af-utils/scrollend-polyfill": "^0.0.14",
+    "@babel/core": "^7.27.7",
     "babel-loader": "^10.0.0",
     "compile-ejs-loader": "^0.0.3",
     "copy-webpack-plugin": "^13.0.0",
@@ -28,7 +29,7 @@
     "webpack-dev-server": "^5.2.0"
   },
   "scripts": {
-    "serve": "node server.js",
+    "serve": "node server.js --mode development",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
