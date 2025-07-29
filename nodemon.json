@@ -1,0 +1,5 @@
+{
+  "watch": ["src", "server.dev.js"],
+  "ext": "js,html,sass",
+  "ignore": ["dist"]
+}

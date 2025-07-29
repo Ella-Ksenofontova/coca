@@ -42,20 +42,21 @@ function getHTMLContent(file) {
 
 function getFrontmatter(markdown) {
   try {
-    const { data } = matter(markdown);
-    return data;
+    const { data, content } = matter(markdown);
+    return [data, content];
   } catch (error) {
     console.error("Error parsing front matter:", error);
-    return {};
+    return [{}, {}];
   }
 }
 
 const posts = getFilesFromDir(path.join(__dirname, "src/pages/posts"));
 
 const makeHtmlConfig = n => {
+  const name = path.basename(posts[n], '.html');
   return new HtmlWebpackPlugin({
     inject: true,
-    filename: `/blog/${path.basename(posts[n])}`,
+    filename: `blog/${name}/index.html`,
     cache: true,
     publicPath: "/",
     template: htmlWebpackPluginTemplateCustomizer({
@@ -64,8 +65,8 @@ const makeHtmlConfig = n => {
 
       templateEjsLoaderOption: {
         data: {
-          ...getFrontmatter(getHTMLContent(posts[n])),
-          content: getHTMLContent(path.join("src/pages/posts-content/", getFrontmatter(getHTMLContent(posts[n])).path_to_real_content))
+          ...getFrontmatter(getHTMLContent(posts[n]))[0],
+          content: getFrontmatter(getHTMLContent(posts[n]))[1]
         }
       }
     })
@@ -74,7 +75,6 @@ const makeHtmlConfig = n => {
 
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
   plugins: [
     new CopyPlugin({
       patterns: [{
@@ -101,25 +101,25 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'contacts.html'),
-      filename: 'contacts.html',
+      filename: 'contacts/index.html',
       publicPath: "/",
       inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'pricing.html'),
-      filename: 'pricing.html',
+      filename: 'pricing/index.html',
       publicPath: "/",
       inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'about.html'),
-      filename: 'about.html',
+      filename: 'about/index.html',
       publicPath: "/",
       inject: true
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'blog.html'),
-      filename: 'blog.html',
+      filename: 'blog/index.html',
       publicPath: "/",
       inject: true
     }),
@@ -172,5 +172,8 @@ module.exports = {
   },
   watchOptions: {
     ignored: /node_modules/
+  },
+  optimization: {
+    realContentHash: false
   }
 }
