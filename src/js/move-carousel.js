@@ -1,4 +1,4 @@
-function moveCarousel(current, selector) {
+export default function moveCarousel(current, selector) {
   const items = document.querySelectorAll(selector);
   const parent = items[0].parentElement;
 

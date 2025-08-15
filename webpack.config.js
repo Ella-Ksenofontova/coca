@@ -5,7 +5,6 @@ const times = require("lodash/times");
 const matter = require("gray-matter");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
 const { htmlWebpackPluginTemplateCustomizer } = require('template-ejs-loader');
 
 function getFilesFromDir(dirPath) {
@@ -59,6 +58,7 @@ const makeHtmlConfig = n => {
     filename: `blog/${name}/index.html`,
     cache: true,
     publicPath: "/",
+    chunks: ["index"],
     template: htmlWebpackPluginTemplateCustomizer({
 
       templatePath: 'index.ejs',
@@ -74,22 +74,18 @@ const makeHtmlConfig = n => {
 };
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    moveCarousel: "./src/js/move-carousel.js",
+    accordions: "./src/js/accordions.js",
+    countryChooser: "./src/js/country-chooser.js",
+    carouselsHomepage: "./src/js/scroll-carousels.js",
+    carouselsAbout: "./src/js/scroll-carousels-about.js",
+    carouselsBlog: "./src/js/scroll-carousels-blog.js",
+    switchPrice: "./src/js/switch-price.js",
+    tooltipsAndDialogs: "./src/js/tooltips-and-dialogs.js"
+  },
   plugins: [
-    new CopyPlugin({
-      patterns: [{
-        from: path.resolve(__dirname, "src/js", "handle-scroll.js"),
-        to: path.resolve(__dirname, "/dist")
-      }
-      ]
-    }),
-    new CopyPlugin({
-      patterns: [{
-        from: path.resolve(__dirname, "src/js", "menu.js"),
-        to: path.resolve(__dirname, "/dist")
-      }
-      ]
-    }),
     new MiniCssExtractPlugin({
       filename: "style.css"
     }),
@@ -97,37 +93,43 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
       filename: 'index.html',
       publicPath: "/",
-      inject: true
+      inject: true,
+      chunks: ["index", "carouselsHomepage"]
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'contacts.html'),
       filename: 'contacts/index.html',
       publicPath: "/",
-      inject: true
+      inject: true,
+      chunks: ["index", "tooltipsAndDialogs", "countryChooser"]
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'pricing.html'),
       filename: 'pricing/index.html',
       publicPath: "/",
-      inject: true
+      inject: true,
+      chunks: ["index", "accordions", "switchPrice"]
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'about.html'),
       filename: 'about/index.html',
       publicPath: "/",
-      inject: true
+      inject: true,
+      chunks: ["index", "carouselsAbout"]
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', 'blog.html'),
       filename: 'blog/index.html',
       publicPath: "/",
-      inject: true
+      inject: true,
+      chunks: ["index", "carouselsBlog"]
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/pages', '404.html'),
       filename: '404.html',
       publicPath: "/",
-      inject: true
+      inject: true,
+      chunks: ["index"]
     }),
     ...times(posts.length, makeHtmlConfig),
     new webpack.ProvidePlugin({
@@ -166,14 +168,11 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: 'bundle.js',
+    filename: '[name].[contenthash].js',
     publicPath: "/",
     clean: true
   },
   watchOptions: {
     ignored: /node_modules/
-  },
-  optimization: {
-    realContentHash: false
   }
 }

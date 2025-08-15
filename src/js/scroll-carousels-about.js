@@ -1,3 +1,4 @@
+import moveCarousel from "./move-carousel";
 let aboutCurrent = 0;
 let teamCurrent = 0;
 let scrollEnabled = { "about": true, "team": true };

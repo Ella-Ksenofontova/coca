@@ -1,3 +1,4 @@
+import moveCarousel from "./move-carousel";
 let articlesCurrent = 0;
 let teamChoiceCurrent = 0;
 let scrollEnabled = { "all-articles": true, "team-choice": true };

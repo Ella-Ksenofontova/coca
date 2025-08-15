@@ -1,3 +1,4 @@
+import moveCarousel from "./move-carousel";
 let newsCurrent = 0;
 let reviewsCurrent = 0;
 let scrollEnabled = { "news": true, "reviews": true };
