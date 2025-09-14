@@ -69,7 +69,7 @@ function movePrevious(current, selector) {
     scrollEnabled[id] = !(parent.offsetWidth < items.reduce((prev, current) => current + prev, 0));
     parent.scrollBy({
       left: -delta,
-      behavior: behaviour
+      behavior: "smooth"
     });
 
     if (parent.parentElement.classList.contains("section-about__carousel")) {
