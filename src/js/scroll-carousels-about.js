@@ -9,7 +9,9 @@ function moveNext(current, selector) {
   const maxIndex = items.length - 1;
   const id = parent.parentElement.classList.contains("section-about__carousel") ? "about" : "team";
 
-  const maxIsScrolledIntoView = items[maxIndex].getBoundingClientRect().left - parent.getBoundingClientRect().left > 0 && parent.getBoundingClientRect().right - items[maxIndex].getBoundingClientRect().right > 0;
+  const maxIsScrolledIntoView = items[maxIndex].getBoundingClientRect().left - parent.getBoundingClientRect().left > 0 && Math.abs(parent.getBoundingClientRect().right - items[maxIndex].getBoundingClientRect().right) <= 1;
+
+  console.log(items[maxIndex].getBoundingClientRect().left - parent.getBoundingClientRect().left, parent.getBoundingClientRect().right - items[maxIndex].getBoundingClientRect().right)
 
   if (current === maxIndex || maxIsScrolledIntoView) {
     const delta = parent.scrollWidth;
