@@ -47,7 +47,7 @@ function movePrevious(current, selector) {
 
   const id = parent.parentElement.classList.contains("section-all-articles__carousel") ? "all-articles" : "team-choice";
 
-  if (current === 0 || Math.round(parent.scrollLeft + 7.5) < items[current - 1].scrollWidth && scrollEnabled[id]) {
+  if (current === 0 || Math.abs(items[0].getBoundingClientRect().left - parent.getBoundingClientRect().left) <= 1 && scrollEnabled[id]) {
     scrollEnabled[id] = !(parent.offsetWidth < items.reduce((prev, current) => current + prev, 0));
     const delta = parent.scrollWidth;
     parent.scrollBy({
@@ -69,7 +69,7 @@ function movePrevious(current, selector) {
     scrollEnabled[id] = !(parent.offsetWidth < items.reduce((prev, current) => current + prev, 0));
     parent.scrollBy({
       left: -delta,
-      behavior: behaviour
+      behavior: "smooth"
     });
 
     if (parent.parentElement.classList.contains("section-all-articles__carousel")) {

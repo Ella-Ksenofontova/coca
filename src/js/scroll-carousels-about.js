@@ -47,7 +47,7 @@ function movePrevious(current, selector) {
 
   const id = parent.parentElement.classList.contains("section-about__carousel") ? "about" : "team";
 
-  if (current === 0 || Math.round(parent.scrollLeft + 7.5) < items[current - 1].scrollWidth && scrollEnabled[id]) {
+  if (current === 0 || Math.abs(items[0].getBoundingClientRect().left - parent.getBoundingClientRect().left) <= 1 && scrollEnabled[id]) {
     scrollEnabled[id] = !(parent.offsetWidth < items.reduce((prev, current) => current + prev, 0));
     const delta = parent.scrollWidth;
     parent.scrollBy({
@@ -61,6 +61,7 @@ function movePrevious(current, selector) {
       teamCurrent = items.length - 1;
     }
   } else if (scrollEnabled[id]) {
+    console.log(1111);
     const padding = parent.parentElement.classList.contains("section-about__carousel") ? 32 : 10
     const index = current > 0 ? current - 1 : 0
 
